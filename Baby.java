@@ -8,10 +8,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Baby extends Actor
 {
-    /**
-     * Act - do whatever the Baby wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    GreenfootImage idle[] = new GreenfootImage[10];
+    
+    public Baby()
+    {
+        for(int i = 0; i < 10; i++)
+        {
+            idle[i] = new GreenfootImage("images/DaBaby_sprite/idle" + i + ".png");
+        }
+        setImage(idle[0]);
+    }
+    
+    int imageIndex = 0;
+    public void animateDaBaby()
+    {
+        setImage(idle[imageIndex]);
+        imageIndex = (imageIndex + 1) % idle.length;
+    }
     public void act()
     {
         // Add your action code here.
@@ -35,5 +48,7 @@ public class Baby extends Actor
             setRotation(90);
             move(2);
         }
+        
+        animateDaBaby();
     }
 }
