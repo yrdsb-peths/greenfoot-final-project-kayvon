@@ -8,19 +8,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Baby extends Actor
 {
-    GreenfootImage idle[] = new GreenfootImage[10];
+    GreenfootImage idle[] = new GreenfootImage[9];
     
     public Baby()
     {
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 9; i++)
         {
-            idle[i] = new GreenfootImage("images/DaBaby_sprite/idle" + i + ".png");
+            idle[i] = new GreenfootImage("images/Spider_sprite/Idle" + i + ".png");
         }
         setImage(idle[0]);
     }
     
     int imageIndex = 0;
-    public void animateDaBaby()
+    public void animateSpider()
     {
         setImage(idle[imageIndex]);
         imageIndex = (imageIndex + 1) % idle.length;
@@ -49,6 +49,6 @@ public class Baby extends Actor
             move(2);
         }
         
-        animateDaBaby();
+        animateSpider();
     }
 }
