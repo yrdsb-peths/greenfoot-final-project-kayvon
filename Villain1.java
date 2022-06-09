@@ -10,7 +10,7 @@ public class Villain1 extends Villain
 {
 public Villain1()
 {
-    setRotation(90);
+    getImage().scale(50, 50);
 }
 public void act()
 {

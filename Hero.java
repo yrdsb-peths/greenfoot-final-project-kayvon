@@ -11,7 +11,7 @@ public class Hero extends Actor
     GreenfootImage[] idle = new GreenfootImage[9];
     
     {
-    	setRotation(270);
+        setRotation(270);
     }
     public Hero()
     {
@@ -28,31 +28,31 @@ public class Hero extends Actor
         setImage(idle[imageIndex]);
         imageIndex = (imageIndex + 1) % idle.length;
     }
-
-    
-    
-    
-    
-    
-    
-    
-    
     public void act()
         {
-        	moveAround();
+            moveAround();
+            animateSpider();  
+            fireProjectile();
         }
-    
-        public void moveAround()
+    public void moveAround()
     {
-    	if(Greenfoot.isKeyDown("d"))
-    	{
-    		setLocation(getX()+5,getY());
-    	}
-    	if(Greenfoot.isKeyDown("a"))
-    	{
-    		setLocation(getX()-5,getY());
-    	}
+        if(Greenfoot.isKeyDown("d"))
+        {
+            setLocation(getX()+5,getY());
+        }
+        if(Greenfoot.isKeyDown("a"))
+        {
+            setLocation(getX()-5,getY());
+        }
     }
-    amimateSpider;
+    public void fireProjectile()
+    {
+        if (Greenfoot.isKeyDown("space"))
+        {
+            getWorld().addObject(new Projectile(), getX(), getY());
+        }
+    }
+    
+    
 }
     
