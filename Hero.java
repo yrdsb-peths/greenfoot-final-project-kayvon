@@ -38,11 +38,11 @@ public class Hero extends Actor
     {
         if(Greenfoot.isKeyDown("d"))
         {
-            setLocation(getX()+5,getY());
+            setLocation(getX()+8,getY());
         }
         if(Greenfoot.isKeyDown("a"))
         {
-            setLocation(getX()-5,getY());
+            setLocation(getX()-8,getY());
         }
     }
     public void fireProjectile()

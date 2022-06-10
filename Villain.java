@@ -14,11 +14,18 @@ public class Villain extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        
     }
     public void moveVillain()
     {
     	this.setLocation(getX(), getY() +3);
+    }
+    public void removeVillain()
+    {
+           if (getY() ==599)
+        {
+            getWorld().removeObject(this);
+        }   
     }
 
 }

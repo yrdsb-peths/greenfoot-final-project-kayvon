@@ -15,5 +15,6 @@ public Villain1()
 public void act()
 {
     moveVillain();
+    removeVillain();
 }
 }

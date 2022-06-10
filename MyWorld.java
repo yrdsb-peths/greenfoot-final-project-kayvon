@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    int villainCount = 0;
     public MyWorld()
     {
         super(600, 600, 1);
@@ -17,9 +17,11 @@ public class MyWorld extends World
 
     public void act()
     {
-        if(Greenfoot.getRandomNumber(60)<1)
+        villainCount++;
+        if(villainCount>59)
         {
             addVillain1();
+            villainCount = 0;
         }
     }
 
