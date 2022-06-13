@@ -16,5 +16,15 @@ public void act()
 {
     moveVillain();
     removeVillain();
+    hitByProjectile();
+}
+public void hitByProjectile()
+{
+    Actor projectile = getOneIntersectingObject(Projectile.class);
+    if (projectile != null)
+    {
+        getWorld().removeObject(projectile);
+        getWorld().removeObject(this);
+    }
 }
 }
