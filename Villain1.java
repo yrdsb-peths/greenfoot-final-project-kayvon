@@ -8,23 +8,28 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Villain1 extends Villain
 {
-public Villain1()
-{
-    getImage().scale(50, 50);
-}
-public void act()
-{
-    moveVillain();
-    removeVillain();
-    hitByProjectile();
-}
-public void hitByProjectile()
-{
-    Actor projectile = getOneIntersectingObject(Projectile.class);
-    if (projectile != null)
+    public Villain1()
     {
-        getWorld().removeObject(projectile);
-        getWorld().removeObject(this);
+        getImage().scale(50, 50);
     }
-}
-}
+
+    public void act()
+    {
+        moveVillain();
+        removeVillain();
+        hitbyProjectile();
+    }
+
+    public void hitbyProjectile()
+    {
+        Actor projectile = getOneIntersectingObject(Projectile.class);
+        if (projectile != null)
+        {
+            getWorld().removeObject(projectile);
+            World world = getWorld();
+            MyWorld myWorld = (MyWorld)world;
+            Counter counter = myWorld.getCounter();
+            counter.addScore();
+            getWorld().removeObject(this);
+        }
+    }

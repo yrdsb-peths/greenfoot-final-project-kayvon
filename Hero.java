@@ -8,8 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Hero extends Actor
 {
-    
-    boolean canFire = true;
     GreenfootImage[] idle = new GreenfootImage[9];
     
     {
@@ -49,16 +47,10 @@ public class Hero extends Actor
     }
     public void fireProjectile()
     {
-        if (Greenfoot.isKeyDown("space") && canFire == true)
+        if (Greenfoot.isKeyDown("space"))
         {
             getWorld().addObject(new Projectile(), getX(), getY());
-            canFire = false;
         }
-        else if (!Greenfoot.isKeyDown("space"))
-        {
-            canFire = true;
-        }
-        
     }
     
     
