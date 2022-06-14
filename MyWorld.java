@@ -9,12 +9,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     int villainCount = 0;
+    Counter counter = new Counter();
     public MyWorld()
     {
         super(600, 600, 1);
         prepare();
     }
-
+    public Coutner getCounter()
+    {
+        return counter;
+    }
     public void act()
     {
         villainCount++;
@@ -36,10 +40,13 @@ public class MyWorld extends World
      */
     private void prepare()
     {
+        addObject(counter, 50,50);
         Hero hero = new Hero();
         addObject(hero,290,443);
         hero.setLocation(301,494);
         hero.setLocation(298,525);
+        Counter counter = new Counter();
+        addObject(counter,87,34);
     }
 }
     
