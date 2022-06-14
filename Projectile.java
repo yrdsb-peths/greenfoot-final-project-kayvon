@@ -30,23 +30,9 @@ public class Projectile extends Actor
 
     public void removeFromWorld()
     {
-        if (getY() ==0)
+         if (getY() ==0)
         {
             getWorld().removeObject(this);
         }   
     }
-    public void hitVillain()
-    {
-        Actor villain = getOneIntersectingObject(Villain.class);
-        if (villain != null)
-        {
-            getWorld().removeObject(villain);
-            getWorld().removeObject(this);
-        }
-        else if (getY() ==599)
-        {
-            getWorld().removeObject(this);
-        }  
-    }
-    
 }

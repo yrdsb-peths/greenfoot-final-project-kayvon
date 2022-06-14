@@ -10,6 +10,4 @@ comment3.params=
 comment3.target=void\ projectileMove()
 comment4.params=
 comment4.target=void\ removeFromWorld()
-comment5.params=
-comment5.target=void\ hitVillain()
-numComments=6
+numComments=5

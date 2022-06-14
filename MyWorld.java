@@ -8,21 +8,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    int villainCount = 0;
     Counter counter = new Counter();
+    int villainCount = 0;
     public MyWorld()
     {
         super(600, 600, 1);
         prepare();
     }
-    public Coutner getCounter()
+    public Counter getCounter()
     {
         return counter;
     }
     public void act()
     {
         villainCount++;
-        if(villainCount>59)
+        if(villainCount>30)
         {
             addVillain1();
             villainCount = 0;
@@ -40,13 +40,15 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-        addObject(counter, 50,50);
+        addObject(counter, 50, 50);
         Hero hero = new Hero();
         addObject(hero,290,443);
         hero.setLocation(301,494);
         hero.setLocation(298,525);
         Counter counter = new Counter();
-        addObject(counter,87,34);
+
+        HealthBar healthBar = new HealthBar();
+        addObject(healthBar,62,104);
     }
 }
     

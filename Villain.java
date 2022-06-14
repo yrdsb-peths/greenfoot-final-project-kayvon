@@ -18,7 +18,7 @@ public class Villain extends Actor
     }
     public void moveVillain()
     {
-    	this.setLocation(getX(), getY() +3);
+        this.setLocation(getX(), getY() +5);
     }
     public void removeVillain()
     {
