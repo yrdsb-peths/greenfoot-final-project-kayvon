@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class title extends World
 {
-
+    static GreenfootSound spider = new GreenfootSound("spiderman.mp3");
     /**
      * Constructor for objects of class title.
      * 
@@ -24,6 +24,8 @@ public class title extends World
         {
             MyWorld world = new MyWorld();
             Greenfoot.setWorld(world);
+            spider.playLoop();
+
         }
     }
 

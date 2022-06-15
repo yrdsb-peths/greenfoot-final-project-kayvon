@@ -31,10 +31,10 @@ public class Counter extends Actor
 
     public void YouWin()
     {
-        if (score >= 100)
+        if (score >= 200)
         {
-            getWorld().addObject(new YouWin(), 300, 300);
-            Greenfoot.stop();
+            youWinScreen youWin = new youWinScreen();
+            Greenfoot.setWorld(youWin);
         }
     }
 }
