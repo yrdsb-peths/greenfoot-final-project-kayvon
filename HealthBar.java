@@ -12,7 +12,7 @@ public class HealthBar extends Actor
      * Act - do whatever the HealthBar wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int health = 3;
+    int health = 4;
     int healthBarWidth = 80;
     int healthBarHeight = 10;
     int pixelsPerHealthPoint = healthBarWidth/health;
@@ -23,6 +23,7 @@ public class HealthBar extends Actor
     public void act()
     {
         update();
+        youLose();
     }
     public void update()
     {
@@ -32,5 +33,17 @@ public class HealthBar extends Actor
         myImage.drawRect(0, 0, healthBarWidth + 1, healthBarHeight + 1);
         myImage.setColor(Color.RED);
         myImage.fillRect( 1, 1, health*pixelsPerHealthPoint, healthBarHeight);
+    }
+    public void loseHealth()
+    {
+        health--;
+    }
+    public void youLose()
+    {
+        if (health == 0)
+        {
+            getWorld().addObject(new YouLose(), 300, 300);
+            Greenfoot.stop();
+        }
     }
 }

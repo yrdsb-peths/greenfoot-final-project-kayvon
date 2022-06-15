@@ -31,6 +31,10 @@ public void hitByProjectile()
     }
     else if (getY() ==599)
         {
+            World world = getWorld();
+            MyWorld myWorld = (MyWorld)world;
+            HealthBar healthbar = myWorld.getHealthBar();
+            healthbar.loseHealth();
             getWorld().removeObject(this);
         }   
     
